@@ -1,3 +1,6 @@
+
+//Este es el controlador
+
 const uploadFile = require("../middleware/upload");
 const fs = require("fs");
 const baseUrl = "http://localhost:3000/files/";
