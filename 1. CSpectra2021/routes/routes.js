@@ -6,7 +6,7 @@ const texturizador = require("../controller/texturizador.controller");
 
 let routes = (app) => {
   router.get('/', function(req, res) {
-   res.send("esta es la paina de texturas urbanas");
+   res.send("esta es la página de CSpectra");
   });
   router.post("/upload", agregador.upload);
   router.get("/files", agregador.getListFiles);

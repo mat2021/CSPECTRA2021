@@ -3,10 +3,10 @@ const mongoose = require('mongoose');
 const audioDB = mongoose.model('audioDB');
 const Annoy = require('annoy');
 
-//al iniciar el programa ES GLOBAL SUCIO_FEO
+//Inicia Annoy
 annoy = new Annoy(142, 'Angular');
 annoy.load("annoy.ann");
-console.log("annoy ha sido leida " + annoy);
+console.log("Annoy leida " + annoy);
 
 function buildVectorSpace(req, res) {
   var annoyLocal = new Annoy(142, 'Angular');
