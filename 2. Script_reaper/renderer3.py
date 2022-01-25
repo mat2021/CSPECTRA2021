@@ -1,4 +1,8 @@
 from reaper_python import *
+import requests
+import uuid
+
+URL = "http://localhost:3000/files"
 
 cuantos = RPR_CountSelectedMediaItems(0)
 if cuantos != 1:
@@ -25,7 +29,19 @@ else:
         norInit = (loopStart + pos - startOff) / durAudio;
         norEnd = (loopEnd + pos - startOff)  / durAudio;
         #cuidar que el loop esté adentro del audio Y MUCHAS COSAS
-        RPR_RenderFileSection(sourceArray[1], "copiaidentica.wav",norInit,norEnd,1)
+        nombreTMP = str(uuid.uuid4()) + ".wav"
+        RPR_RenderFileSection(sourceArray[1], nombreTMP, norInit,norEnd,1)
+
+        sample_file = open(nombreTMP, "rb")
+        upload_file = {"file": sample_file}
+        r = requests.post("http://localhost:3000/texturabasica", files = upload_file)
+        textureurl = r.json()["url"]
+
+        URLAUDIO = textureurl;
+        r = requests.get(url = "http://localhost:3000/files/" + URLAUDIO)
+        open(URLAUDIO, 'wb').write(r.content) #lo pone en home
+        RPR_InsertMedia(URLAUDIO,0)
+
         RPR_ShowConsoleMsg(sourceArray[1]+ "\n")
         RPR_ShowConsoleMsg('DURTOMA: ' + str(durToma)+ "\n")
         RPR_ShowConsoleMsg('DURAUDIO: ' + str(durAudio)+ "\n")
@@ -34,3 +50,5 @@ else:
         RPR_ShowConsoleMsg('SNAP: ' + str(startOff)+ "\n")
         RPR_ShowConsoleMsg('INIT: ' + str(norInit)+ "\n")
         RPR_ShowConsoleMsg('END: ' + str(norEnd)+ "\n")
+        #RPR_ShowMessageBox("audio has been generrated", "DONE", 0)
+        RPR_ShowConsoleMsg("audio has been generated")
