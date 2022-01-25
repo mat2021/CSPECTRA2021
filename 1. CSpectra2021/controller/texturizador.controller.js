@@ -32,7 +32,7 @@ const upload = async (req, res) => {
         message: "Please upload a file!"
       });
     }
-    
+
     convertirAWav(req.randomName, res);
   } catch (err) {
     console.log(err);
@@ -181,7 +181,7 @@ function applyFadeINOUT(fileInput, res) {
       console.log("ya termine de fadeinout");
 
       res.status(200).send({
-        message: "Uploaded the file successfully: " + fileInput.slice(0, -4) + "_FADE.wav",
+        message: "OK", url: fileInput.slice(0, -4) + "_FADE.wav"
       });
     });
   });
