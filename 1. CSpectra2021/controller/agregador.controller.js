@@ -3,7 +3,6 @@ const fs = require("fs");
 const baseUrl = "http://localhost:3000/files/";
 const mongoose = require('mongoose');
 const audioDB = mongoose.model('audioDB');
-//var ffmpeg = require('ffmpeg');
 var wavFileInfo = require('wav-file-info');
 var ffmpeg = require('fluent-ffmpeg');
 const yaml = require('js-yaml');
