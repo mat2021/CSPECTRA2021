@@ -6,10 +6,10 @@ URL = "http://localhost:3000/files"
 
 cuantos = RPR_CountSelectedMediaItems(0)
 if cuantos != 1:
-    RPR_ShowMessageBox("Select only one", "ERROR", 0)
+    RPR_ShowMessageBox("Selecione uno", "ERROR", 0)
 else:
     item = RPR_GetSelectedMediaItem( 0, 0 )
-    take = RPR_GetMediaItemTake(item, 0) #asumimos una toma
+    take = RPR_GetMediaItemTake(item, 0) 
 
     durToma = RPR_GetMediaItemInfo_Value(item, "D_LENGTH")
 
@@ -21,14 +21,14 @@ else:
     startOff = RPR_GetMediaItemTakeInfo_Value(take, "D_STARTOFFS")
 
     if loopSize > 5:
-        RPR_ShowMessageBox("audios shorter than 5 secs", "ERROR", 0)
+        RPR_ShowMessageBox("Audios deben ser más cortos a 5 secs", "ERROR", 0)
     else:
         source = RPR_GetMediaItemTake_Source(take)
         durAudio = RPR_GetMediaSourceLength(source, False)[0];
         sourceArray = RPR_GetMediaSourceFileName(source, "", 512)
         norInit = (loopStart + pos - startOff) / durAudio;
         norEnd = (loopEnd + pos - startOff)  / durAudio;
-        #cuidar que el loop esté adentro del audio Y MUCHAS COSAS
+        #uiid (Identificador Universalmente Único)
         nombreTMP = str(uuid.uuid4()) + ".wav"
         RPR_RenderFileSection(sourceArray[1], nombreTMP, norInit,norEnd,1)
 
@@ -50,5 +50,4 @@ else:
         RPR_ShowConsoleMsg('SNAP: ' + str(startOff)+ "\n")
         RPR_ShowConsoleMsg('INIT: ' + str(norInit)+ "\n")
         RPR_ShowConsoleMsg('END: ' + str(norEnd)+ "\n")
-        #RPR_ShowMessageBox("audio has been generrated", "DONE", 0)
-        RPR_ShowConsoleMsg("audio has been generated")
+        RPR_ShowConsoleMsg("audio ha sido generado")
