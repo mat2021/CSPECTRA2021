@@ -173,7 +173,7 @@ function applyFadeINOUT(fileInput, res) {
       }
       if (stderr) {
         console.log(`stderr: ${stderr}`);
-        console.log("Ya termine fadeinout con error");
+        console.log("Ya termine fade in/out con error");
         return;
       }
       console.log(`stdout: ${stdout}`);

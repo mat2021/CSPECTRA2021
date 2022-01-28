@@ -7,7 +7,7 @@ const texturizador = require("../controller/texturizador.controller");
 //Este es un ejemplo 
 let routes = (app) => {
   router.get('/', function(req, res) {
-   res.send("esta es la página de CSpectra");
+   res.send("Esta es la página de CSpectra");
   });
   router.post("/upload", agregador.upload);
   router.get("/files", agregador.getListFiles);

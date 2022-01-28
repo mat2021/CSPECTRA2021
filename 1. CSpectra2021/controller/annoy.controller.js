@@ -47,11 +47,11 @@ function buildVectorSpace(req, res) {
     })
     .on('end', function() {
       // final callback
-      console.log("modelo creado");
+      console.log("Modelo creado");
       annoyLocal.build();
       annoyLocal.save("annoy.ann");
       annoy = annoyLocal;
-      res.send("modelo ha sido actualizado");
+      res.send("Modelo ha sido actualizado");
     });
 }
 

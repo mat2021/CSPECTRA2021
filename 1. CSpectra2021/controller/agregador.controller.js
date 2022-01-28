@@ -31,12 +31,12 @@ function cortar_audio(filename) {
     }
     if (stderr) {
       console.log(`stderr: ${stderr}`);
-      console.log("ya termine de cortar con error");
+      console.log("Ya termine de cortar con error");
       analizar_todos_los_audio(diroutput);
       return;
     }
     console.log(`stdout: ${stdout}`);
-    console.log("ya termine de cortar");
+    console.log("Ya termine de cortar");
   });
 }
 
@@ -100,7 +100,7 @@ function convertirAWav(filename) {
     var fileoutput = baseroot + filename.slice(0, -9)
     //fs.mkdirSync(baseroot + filename.slice(0,-9));
     //var fileloc = __basedir + "/resources/static/assets/uploads/filename/" + "raw"
-    console.log("inicia conversion");
+    console.log("Inicia conversion");
     ffmpeg()
       .input(fileinput)
       .audioChannels(1)
