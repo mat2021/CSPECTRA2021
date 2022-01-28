@@ -54,7 +54,7 @@ function analizar_todos_los_audio(diroutput) {
 }
 
 function analizar_audio(filenameofpart) {
-  console.log("entra a analisis " + filenameofpart);
+  console.log("Entra a analisis " + filenameofpart);
   var comando = __basedir + "/streaming_extractor_freesound " + filenameofpart + " " + filenameofpart + ".json"
   exec(comando, (error, stdout, stderr) => {
     if (error) {
@@ -66,7 +66,7 @@ function analizar_audio(filenameofpart) {
       return;
     }
     console.log(`stdout: ${stdout}`);
-    console.log("ya termine analisis de parte");
+    console.log("Finaliza analisis sección");
     agrega_data_a_db(filenameofpart);
   });
 }
@@ -86,9 +86,9 @@ function agrega_data_a_db(filenameofpart){
       audioItem.save(function(err, audio) {
         if (err) {
           console.log(err)
-          console.log("error al grabar en db")
+          console.log("Error al grabar en db")
         } else {
-          console.log("bien grabado en db hacemos fiesta")
+          console.log("Realizado")
         }
       });
 }
@@ -108,7 +108,7 @@ function convertirAWav(filename) {
       .output(fileoutput + ".wav")
       .on('end', function() {
         console.log('Processing finished !');
-        console.log("termina conversion a wav");
+        console.log("Termina conversion a wav");
         cortar_audio(filename.slice(0, -9));
         //cortarEnSecciones(filename.slice(0,-9)); POR EL MOMENTO NO
       })
@@ -129,14 +129,14 @@ const upload = async (req, res) => {
       });
     }
     res.status(200).send({
-      message: "Uploaded the file successfully: " + req.file.originalname,
+      message: "Actualizado el archivo exitosamente: " + req.file.originalname,
     });
     convertirAWav(req.randomName);
   } catch (err) {
     console.log(err);
     if (err.code == "LIMIT_FILE_SIZE") {
       return res.status(500).send({
-        message: "File size cannot be larger than 2MB!",
+        message: "Los archivos no pueden ser de más de 2 MB",
       });
     }
     res.status(500).send({
@@ -151,7 +151,7 @@ const getListFiles = (req, res) => {
   fs.readdir(directoryPath, function(err, files) {
     if (err) {
       res.status(500).send({
-        message: "Unable to scan files!",
+        message: "No se pueden escanear los archivos!",
       });
     }
 
@@ -175,7 +175,7 @@ const download = (req, res) => {
   res.download(directoryPath + fileName, fileName, (err) => {
     if (err) {
       res.status(500).send({
-        message: "Could not download the file. " + err,
+        message: "No se puede descargar el archivo! " + err,
       });
     }
   });

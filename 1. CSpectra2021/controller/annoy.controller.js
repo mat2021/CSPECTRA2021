@@ -13,7 +13,6 @@ function buildVectorSpace(req, res) {
   var counter = 0;
   audioDB.find({}).stream()
     .on('data', function(doc) {
-      //console.log("*******" + doc._id)
       var data = [];
       var lowlevelstatistics = doc.statistics.lowlevel;
       var keys = Object.keys(lowlevelstatistics);
