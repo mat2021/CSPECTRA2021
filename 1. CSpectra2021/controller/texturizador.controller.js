@@ -85,7 +85,7 @@ function analizar_audio(filenameofpart, res) {
       return;
     }
     console.log(`stdout: ${stdout}`);
-    console.log("ya termine analisis de parte");
+    console.log("Ya termine análisis de segmento");
     obtenerSimilares(filenameofpart, res);
   });
 }
