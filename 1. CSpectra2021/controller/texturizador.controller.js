@@ -130,7 +130,6 @@ var concatenateMixed = async function(fileNameList, res) {
   var parameters = [];
   var currentTime = 0;
   fileNameList.forEach(function addInput(fileName) {
-    //TODO hacer mejor crossfade en función de tamaños de audios
     if (fileName.dur > 0.5) {
       comando += fileName.nombre + " ";
       currentTime += fileName.dur;

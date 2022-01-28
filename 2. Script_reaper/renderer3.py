@@ -28,6 +28,7 @@ else:
         sourceArray = RPR_GetMediaSourceFileName(source, "", 512)
         norInit = (loopStart + pos - startOff) / durAudio;
         norEnd = (loopEnd + pos - startOff)  / durAudio;
+        
         #uiid (Identificador Universalmente Único)
         nombreTMP = str(uuid.uuid4()) + ".wav"
         RPR_RenderFileSection(sourceArray[1], nombreTMP, norInit,norEnd,1)
@@ -39,7 +40,7 @@ else:
 
         URLAUDIO = textureurl;
         r = requests.get(url = "http://localhost:3000/files/" + URLAUDIO)
-        open(URLAUDIO, 'wb').write(r.content) #lo pone en home
+        open(URLAUDIO, 'wb').write(r.content)
         RPR_InsertMedia(URLAUDIO,0)
 
         RPR_ShowConsoleMsg(sourceArray[1]+ "\n")
@@ -50,4 +51,4 @@ else:
         RPR_ShowConsoleMsg('SNAP: ' + str(startOff)+ "\n")
         RPR_ShowConsoleMsg('INIT: ' + str(norInit)+ "\n")
         RPR_ShowConsoleMsg('END: ' + str(norEnd)+ "\n")
-        RPR_ShowConsoleMsg("audio ha sido generado")
+        RPR_ShowConsoleMsg("El audio ha sido generado")
