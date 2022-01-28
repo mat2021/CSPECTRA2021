@@ -42,11 +42,9 @@ function cortar_audio(filename) {
 
 function analizar_todos_los_audio(diroutput) {
   fs.readdir(diroutput, function(err, files) {
-    //handling error
     if (err) {
       return console.log('Unable to scan directory: ' + err);
     }
-    //listing all files using forEach
     files.forEach(function(file) {
       analizar_audio(diroutput + file)
     });
