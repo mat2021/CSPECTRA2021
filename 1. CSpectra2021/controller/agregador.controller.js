@@ -107,10 +107,8 @@ function convertirAWav(filename) {
       .noVideo()
       .output(fileoutput + ".wav")
       .on('end', function() {
-        console.log('Processing finished !');
         console.log("Termina conversion a wav");
         cortar_audio(filename.slice(0, -9));
-        //cortarEnSecciones(filename.slice(0,-9)); POR EL MOMENTO NO
       })
       .run()
   } catch (e) {
@@ -125,7 +123,7 @@ const upload = async (req, res) => {
     await uploadFile(req, res);
     if (req.file == undefined) {
       return res.status(400).send({
-        message: "Please upload a file!"
+        message: "Por favor, suba el archivo!"
       });
     }
     res.status(200).send({
