@@ -31,7 +31,7 @@ function cortar_audio(filename) {
     }
     if (stderr) {
       console.log(`stderr: ${stderr}`);
-      console.log("Ya termine de cortar con error");
+      console.log("Ya termine de cortar");
       analizar_todos_los_audio(diroutput);
       return;
     }

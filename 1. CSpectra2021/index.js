@@ -15,6 +15,8 @@ require("./models/audio");
 
 const initRoutes = require("./routes/routes");
 
+app.use(express.static('public'));
+
 app.use(express.urlencoded({
   extended: true
 }));
