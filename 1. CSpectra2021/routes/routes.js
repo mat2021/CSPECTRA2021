@@ -4,7 +4,6 @@ const agregador = require("../controller/agregador.controller");
 const annoyer = require("../controller/annoy.controller");
 const texturizador = require("../controller/texturizador.controller");
 
-//Este es un ejemplo 
 let routes = (app) => {
   router.get('/', function(req, res) {
    res.send("Esta es la página de CSpectra");
