@@ -21,7 +21,6 @@ function buildVectorSpace(req, res) {
       keys.forEach(item => {
         if (lowlevelstatistics[item].mean != undefined)
           data.push(lowlevelstatistics[item].mean);
-        //else console.log(item, lowlevelstatisatics[item].mean)
       });
       //para hacer el flatten
       var dflat = data.reduce((acc, val) => acc.concat(val), []);
@@ -35,18 +34,14 @@ function buildVectorSpace(req, res) {
         if (err) {
           console.log("error" + err)
         } else {
-          //console.log("vientos")
         }
       });
 
       counter++;
-      //console.log(dflat.length);
     })
     .on('error', function(err) {
-      // handle error
     })
     .on('end', function() {
-      // final callback
       console.log("Modelo creado");
       annoyLocal.build();
       annoyLocal.save("annoy.ann");
