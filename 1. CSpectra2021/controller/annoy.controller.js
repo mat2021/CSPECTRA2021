@@ -51,12 +51,6 @@ function buildVectorSpace(req, res) {
 }
 
 function test() {
-  var annoyIndex1 = new Annoy(10, 'euclidean');
-  annoyIndex1.addItem(0, [-5.0, -4.5, -3.2, -2.8, -2.1, -1.5, -0.34, 0, 3.7, 6]);
-  annoyIndex1.addItem(1, [5.0, 4.5, 3.2, 2.8, 2.1, 1.5, 0.34, 0, -3.7, -6]);
-  annoyIndex1.addItem(2, [0, 0, 0, 0, 0, -1, -1, -0.2, 0.1, 0.8]);
-  annoyIndex1.build();
-  annoyIndex1.save("annoyPath.ann");
   var annoyIndex2 = new Annoy(10, 'euclidean');
   var sum = [];
 

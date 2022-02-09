@@ -38,7 +38,7 @@ const upload = async (req, res) => {
     console.log(err);
     if (err.code == "LIMIT_FILE_SIZE") {
       return res.status(500).send({
-        message: "El archivo no puede ser de más de 2MB!",
+        message: "El archivo no puede ser de más de 200 MB!",
       });
     }
     res.status(500).send({
