@@ -3,6 +3,7 @@ const fs = require("fs");
 const baseUrl = "http://localhost:3000/files/";
 const mongoose = require('mongoose');
 const audioDB = mongoose.model('audioDB');
+//var ffmpeg = require('ffmpeg');
 var wavFileInfo = require('wav-file-info');
 var ffmpeg = require('fluent-ffmpeg');
 const yaml = require('js-yaml');
@@ -23,7 +24,7 @@ function cortar_audio(filename) {
   var fileinput = baseroot + filename + ".wav";
   var diroutput = baseroot + filename + "/";
   fs.mkdirSync(diroutput);
-  var comando = "aubiocut " + fileinput + " -c -O specflux -t 0.6 -o " + diroutput
+  var comando = "aubiocut" + fileinput + " -c -O specflux -t 0.6  -o" + diroutput
   exec(comando, (error, stdout, stderr) => {
     if (error) {
       console.log(`error: ${error.message}`);
@@ -31,20 +32,22 @@ function cortar_audio(filename) {
     }
     if (stderr) {
       console.log(`stderr: ${stderr}`);
-      console.log("Ya termine de cortar");
+      console.log("ya termine de cortar con error");
       analizar_todos_los_audio(diroutput);
       return;
     }
     console.log(`stdout: ${stdout}`);
-    console.log("Ya termine de cortar");
+    console.log("ya termine de cortar");
   });
 }
 
 function analizar_todos_los_audio(diroutput) {
   fs.readdir(diroutput, function(err, files) {
+    //handling error
     if (err) {
       return console.log('Unable to scan directory: ' + err);
     }
+    //listing all files using forEach
     files.forEach(function(file) {
       analizar_audio(diroutput + file)
     });
@@ -52,7 +55,7 @@ function analizar_todos_los_audio(diroutput) {
 }
 
 function analizar_audio(filenameofpart) {
-  console.log("Entra a analisis " + filenameofpart);
+  console.log("entra a analisis " + filenameofpart);
   var comando = __basedir + "/streaming_extractor_freesound " + filenameofpart + " " + filenameofpart + ".json"
   exec(comando, (error, stdout, stderr) => {
     if (error) {
@@ -64,7 +67,7 @@ function analizar_audio(filenameofpart) {
       return;
     }
     console.log(`stdout: ${stdout}`);
-    console.log("Finaliza analisis sección");
+    console.log("ya termine analisis de parte");
     agrega_data_a_db(filenameofpart);
   });
 }
@@ -84,9 +87,9 @@ function agrega_data_a_db(filenameofpart){
       audioItem.save(function(err, audio) {
         if (err) {
           console.log(err)
-          console.log("Error al grabar en db")
+          console.log("error al grabar en db")
         } else {
-          console.log("Realizado")
+          console.log("bien grabado en db hacemos fiesta")
         }
       });
 }
@@ -98,15 +101,17 @@ function convertirAWav(filename) {
     var fileoutput = baseroot + filename.slice(0, -9)
     //fs.mkdirSync(baseroot + filename.slice(0,-9));
     //var fileloc = __basedir + "/resources/static/assets/uploads/filename/" + "raw"
-    console.log("Inicia conversion");
+    console.log("inicia conversion");
     ffmpeg()
       .input(fileinput)
       .audioChannels(1)
       .noVideo()
       .output(fileoutput + ".wav")
       .on('end', function() {
-        console.log("Termina conversion a wav");
+        console.log('Processing finished !');
+        console.log("termina conversion a wav");
         cortar_audio(filename.slice(0, -9));
+        //cortarEnSecciones(filename.slice(0,-9)); POR EL MOMENTO NO
       })
       .run()
   } catch (e) {
@@ -121,18 +126,18 @@ const upload = async (req, res) => {
     await uploadFile(req, res);
     if (req.file == undefined) {
       return res.status(400).send({
-        message: "Por favor, suba el archivo!"
+        message: "Please upload a file!"
       });
     }
     res.status(200).send({
-      message: "Actualizado el archivo exitosamente: " + req.file.originalname,
+      message: "Uploaded the file successfully: " + req.file.originalname,
     });
     convertirAWav(req.randomName);
   } catch (err) {
     console.log(err);
     if (err.code == "LIMIT_FILE_SIZE") {
       return res.status(500).send({
-        message: "Los archivos no pueden ser de más de 200 MB",
+        message: "File size cannot be larger than 2MB!",
       });
     }
     res.status(500).send({
@@ -147,7 +152,7 @@ const getListFiles = (req, res) => {
   fs.readdir(directoryPath, function(err, files) {
     if (err) {
       res.status(500).send({
-        message: "No se pueden escanear los archivos!",
+        message: "Unable to scan files!",
       });
     }
 
@@ -171,7 +176,7 @@ const download = (req, res) => {
   res.download(directoryPath + fileName, fileName, (err) => {
     if (err) {
       res.status(500).send({
-        message: "No se puede descargar el archivo! " + err,
+        message: "Could not download the file. " + err,
       });
     }
   });

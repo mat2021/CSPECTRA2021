@@ -2,14 +2,14 @@ from reaper_python import *
 import requests
 import uuid
 
-URL = "http://localhost:3000/files"
+URL = "http://localhost:3000/files/"
 
 cuantos = RPR_CountSelectedMediaItems(0)
 if cuantos != 1:
     RPR_ShowMessageBox("Selecione uno", "ERROR", 0)
 else:
     item = RPR_GetSelectedMediaItem( 0, 0 )
-    take = RPR_GetMediaItemTake(item, 0) 
+    take = RPR_GetMediaItemTake(item, 0)
 
     durToma = RPR_GetMediaItemInfo_Value(item, "D_LENGTH")
 
@@ -28,10 +28,11 @@ else:
         sourceArray = RPR_GetMediaSourceFileName(source, "", 512)
         norInit = (loopStart + pos - startOff) / durAudio;
         norEnd = (loopEnd + pos - startOff)  / durAudio;
-        
+
         #uiid (Identificador Universalmente Único)
         nombreTMP = str(uuid.uuid4()) + ".wav"
         RPR_RenderFileSection(sourceArray[1], nombreTMP, norInit,norEnd,1)
+        sourceSelected = RPR_GetMediaSourceFileName ("~/copiaidentica.wav", "", 512)
 
         sample_file = open(nombreTMP, "rb")
         upload_file = {"file": sample_file}
@@ -52,3 +53,4 @@ else:
         RPR_ShowConsoleMsg('INIT: ' + str(norInit)+ "\n")
         RPR_ShowConsoleMsg('END: ' + str(norEnd)+ "\n")
         RPR_ShowConsoleMsg("El audio ha sido generado")
+        RPR_ShowMessageBox("El audio ha sido generado")

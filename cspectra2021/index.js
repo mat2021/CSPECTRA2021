@@ -2,6 +2,7 @@ const cors = require("cors");
 const express = require("express");
 const app = express();
 const mongoose = require('mongoose');
+const path = require('path');
 
 global.__basedir = __dirname;
 
@@ -21,6 +22,10 @@ app.use(express.urlencoded({
   extended: true
 }));
 initRoutes(app);
+
+app.get('/', function(req, res) {
+res.sendFile(path.join(__dirname, '/uploadaudio.html'));
+});
 
 let port = 3000;
 

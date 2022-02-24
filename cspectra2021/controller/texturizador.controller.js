@@ -29,7 +29,7 @@ const upload = async (req, res) => {
     await uploadFile(req, res);
     if (req.file == undefined) {
       return res.status(400).send({
-        message: "Por favor, actualice el archivo!"
+        message: "Please upload a file!"
       });
     }
 
@@ -38,7 +38,7 @@ const upload = async (req, res) => {
     console.log(err);
     if (err.code == "LIMIT_FILE_SIZE") {
       return res.status(500).send({
-        message: "El archivo no puede ser de más de 200 MB!",
+        message: "File size cannot be larger than 2MB!",
       });
     }
     res.status(500).send({
@@ -54,15 +54,15 @@ function convertirAWav(filename, res) {
     var fileoutput = baseroot + filename.slice(0, -9)
     //fs.mkdirSync(baseroot + filename.slice(0,-9));
     //var fileloc = __basedir + "/resources/static/assets/uploads/filename/" + "raw"
-    console.log("Inicia conversion");
+    console.log("inicia conversion");
     ffmpeg()
       .input(fileinput)
       .audioChannels(1)
       .noVideo()
       .output(fileoutput + ".wav")
       .on('end', function() {
-        console.log('Procesamiento finalizado !');
-        console.log("Termina conversion a wav");
+        console.log('Processing finished !');
+        console.log("termina conversion a wav");
         analizar_audio(fileoutput + ".wav", res);
       })
       .run()
@@ -73,7 +73,7 @@ function convertirAWav(filename, res) {
 }
 
 function analizar_audio(filenameofpart, res) {
-  console.log("Entra a analisis " + filenameofpart);
+  console.log("entra a analisis " + filenameofpart);
   var comando = __basedir + "/streaming_extractor_freesound " + filenameofpart + " " + filenameofpart + ".json"
   exec(comando, (error, stdout, stderr) => {
     if (error) {
@@ -85,7 +85,7 @@ function analizar_audio(filenameofpart, res) {
       return;
     }
     console.log(`stdout: ${stdout}`);
-    console.log("Ya termine análisis de segmento");
+    console.log("ya termine analisis de parte");
     obtenerSimilares(filenameofpart, res);
   });
 }
@@ -100,8 +100,9 @@ async function obtenerSimilares(filenameofpart, res) {
   keys.forEach(item => {
     if (lowlevelstatistics[item].mean != undefined)
       data.push(lowlevelstatistics[item].mean);
+    //else console.log(item, lowlevelstatisatics[item].mean)
   });
-  //Flatten
+  //para hacer el flatten
   var dflat = data.reduce((acc, val) => acc.concat(val), []);
   var neighbors = annoy.getNNsByVector(dflat, 10, -1, false);
   console.log(neighbors);
@@ -118,7 +119,7 @@ async function obtenerSimilares(filenameofpart, res) {
       "dur": doc.statistics.sfx.duration
     });
   }
-  console.log("Construyendo el arreglo")
+  console.log("done building array")
   concatenateMixed(neighXnombre, res);
 }
 
@@ -130,6 +131,7 @@ var concatenateMixed = async function(fileNameList, res) {
   var parameters = [];
   var currentTime = 0;
   fileNameList.forEach(function addInput(fileName) {
+    //TODO hacer mejor crossfade en función de tamaños de audios
     if (fileName.dur > 0.5) {
       comando += fileName.nombre + " ";
       currentTime += fileName.dur;
@@ -146,11 +148,11 @@ var concatenateMixed = async function(fileNameList, res) {
     }
     if (stderr) {
       console.log(`stderr: ${stderr}`);
-      console.log("Ya termine de concatenar con error");
+      console.log("ya termine de concatenar con error");
       return;
     }
     console.log(`stdout: ${stdout}`);
-    console.log("Ya termine de concatenar");
+    console.log("ya termine de concatenar");
 
     applyFadeINOUT(outputFileName, res);
   });
@@ -172,11 +174,11 @@ function applyFadeINOUT(fileInput, res) {
       }
       if (stderr) {
         console.log(`stderr: ${stderr}`);
-        console.log("Ya termine fade in/out con error");
+        console.log("ya termine de fadeinout con error");
         return;
       }
       console.log(`stdout: ${stdout}`);
-      console.log("Ya termine fadeinout");
+      console.log("ya termine de fadeinout");
 
       res.status(200).send({
         message: "OK", url: fileInput.slice(0, -4) + "_FADE.wav"
