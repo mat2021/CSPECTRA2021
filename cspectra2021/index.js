@@ -1,13 +1,13 @@
 const cors = require("cors");
 const express = require("express");
 const app = express();
-const mongoose = require('mongoose');
-const path = require('path');
+const mongoose = require("mongoose");
+const path = require("path");
 
 global.__basedir = __dirname;
 
 var corsOptions = {
-  origin: "http://localhost:3001"
+  origin: "http://localhost:3000",
 };
 
 app.use(cors(corsOptions));
@@ -16,25 +16,22 @@ require("./models/audio");
 
 const initRoutes = require("./routes/routes");
 
-app.use(express.static('public'));
+app.use(express.static("public"));
 
-app.use(express.urlencoded({
-  extended: true
-}));
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
 initRoutes(app);
-
-app.get('/', function(req, res) {
-res.sendFile(path.join(__dirname, '/uploadaudio.html'));
-});
 
 let port = 3000;
 
-mongoose.connect('mongodb://localhost/texturasurbanasdb', function(err, res) {
+mongoose.connect("mongodb://localhost/texturasurbanasdb", function (err, res) {
   if (err) {
-    console.log('ERROR: connecting to Database. ' + err);
-  }
-  else {
-    console.log('Base de datos creadada OK');
+    console.log("ERROR: connecting to Database. " + err);
+  } else {
+    console.log("Base de datos creadada OK");
   }
   app.listen(port, () => {
     console.log(`Running at localhost:${port}`);

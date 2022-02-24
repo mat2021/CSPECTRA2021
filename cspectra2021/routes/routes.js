@@ -4,11 +4,7 @@ const agregador = require("../controller/agregador.controller");
 const annoyer = require("../controller/annoy.controller");
 const texturizador = require("../controller/texturizador.controller");
 
-
 let routes = (app) => {
-  router.get('/', function(req, res) {
-   //res.sendFile(path.join(__dirname, '/uploadaudio.html'));
-  });
   router.post("/upload", agregador.upload);
   router.get("/files", agregador.getListFiles);
   router.get("/files/:name", agregador.download);
