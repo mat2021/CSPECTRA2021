@@ -24,7 +24,7 @@ function cortar_audio(filename) {
   var fileinput = baseroot + filename + ".wav";
   var diroutput = baseroot + filename + "/";
   fs.mkdirSync(diroutput);
-  var comando = "aubiocut" + fileinput + " -c -O specflux -t 0.6  -o" + diroutput
+  var comando = "aubiocut " + fileinput + " -c -O specflux -t 0.6  -o" + diroutput
   exec(comando, (error, stdout, stderr) => {
     if (error) {
       console.log(`error: ${error.message}`);

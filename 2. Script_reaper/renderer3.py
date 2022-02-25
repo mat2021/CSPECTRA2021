@@ -53,4 +53,3 @@ else:
         RPR_ShowConsoleMsg('INIT: ' + str(norInit)+ "\n")
         RPR_ShowConsoleMsg('END: ' + str(norEnd)+ "\n")
         RPR_ShowConsoleMsg("El audio ha sido generado")
-        RPR_ShowMessageBox("El audio ha sido generado")
