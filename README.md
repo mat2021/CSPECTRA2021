@@ -3,7 +3,7 @@
 [Herramienta de comparación de similitudes espectrales]
 ***
 
-![](https://ottocastro.com/images/README/01.jpg =250x)
+![](https://ottocastro.com/600x350/images/README/01.jpg)
 
 Fuente: https://www.iteramos.com/pregunta/89805/cambiar-el-tamano-de-la-imagen-en-markdown-en-gitlab)
 
