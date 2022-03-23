@@ -2,8 +2,6 @@
 **CSpectra2021**
 [Herramienta de comparación de similitudes espectrales]
 ***
-![IMAGEN](https://www.dropbox.com/home/0.0%20IMAGENES%20TESIS/Imagenes%20REAPER?preview=1.reaper.jpg)
-
 
 **Descripción**
 Esta investigación propone el uso del **CSpectra2021** como herramienta tecnológica de asistencia a la composición musical, con el fin de confrontar y complementar la escucha del compositor mediante la escucha de máquina. En esta tarea se implementa el aprendizaje supervisado, desde un sistema informático, con el propósito de encontrar similitudes tímbricas entre grabaciones de sonidos urbanos. Posteriormente, dichos sonidos serán organizados desde la escucha del compositor de manera estratégica para la composición musical.
@@ -40,9 +38,7 @@ Running at localhost:3000
 
 2. Una vez que se instaló el servidor y este corre en la computadora. Abra el programa REAPER y cargue el *script*  **csp_render.py** que le permitirá comunicarse entre el Reaper con el servidor.
 
-El *script* lo puede encontrar en la carpeta llamada **2. Script_reaper**. Para cargar este *script*, se va al menú de **Reaper** con la ruta: *Actions>Load ReaScript* y se selecciona el *csp_render.py*. Como se ve en la figura 1
-
-**Figura 1**
+El *script* lo puede encontrar en la carpeta llamada **2. Script_reaper**. Para cargar este *script*, se va al menú de **Reaper** con la ruta: *Actions>Load ReaScript* y se selecciona el *csp_render.py*.
 
 
 
