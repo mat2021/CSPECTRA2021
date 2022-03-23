@@ -1,6 +1,6 @@
 
-#CSpectra2021
-##[Herramienta de comparación de similitudes espectrales]
+**CSpectra2021**
+[Herramienta de comparación de similitudes espectrales]
 ***
 
 **Descripción**
@@ -41,6 +41,11 @@ Running at localhost:3000
 El *script* lo puede encontrar en la carpeta llamada **2. Script_reaper**. Para cargar este *script*, se va al menú de **Reaper** con la ruta: *Actions>Load ReaScript* y se selecciona el *csp_render.py*. Como se ve en la figura 1
 
 **Figura 1**
+
+
+
+
+
 
 
 
