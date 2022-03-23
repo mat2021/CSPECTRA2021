@@ -27,17 +27,17 @@ Esta sección explica como poner instalar el servidor de forma local, es decir e
 
 Es importante aclarar que, una vez que el usuario clone la versión del GitHub para instalarla en su computadora personal, debe crear la ruta: 
 >“/resources/static/assets/uploads/”.
- 
+
 Esta le servirá al sistema para guardar los audios y diferentes archivos que genere.
 
 **2.** Abra la terminal y desde allí escriba la siguiente instrucción:
 
-$node index.js
+>$node index.js
 
 En caso afirmativo, debe dar el siguiente mensaje de respuesta en la consola de la terminal:
 
-`Base de datos creada OK
-`Running at localhost:3000
+>Base de datos creada OK
+>Running at localhost:3000
 
 **3.** Una vez que se instaló el servidor y este corre en la computadora. Abra el programa REAPER y cargue el *script*  **csp_render.py** que le permitirá comunicarse entre el Reaper con el servidor.
 
