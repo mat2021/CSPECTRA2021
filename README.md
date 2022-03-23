@@ -3,6 +3,8 @@
 [Herramienta de comparación de similitudes espectrales]
 ***
 
+![](https://ottocastro.com/doctorado/images/cspectra.jpg)
+
 **Descripción**
 Esta investigación propone el uso del **CSpectra2021** como herramienta tecnológica de asistencia a la composición musical, con el fin de confrontar y complementar la escucha del compositor mediante la escucha de máquina. En esta tarea se implementa el aprendizaje supervisado, desde un sistema informático, con el propósito de encontrar similitudes tímbricas entre grabaciones de sonidos urbanos. Posteriormente, dichos sonidos serán organizados desde la escucha del compositor de manera estratégica para la composición musical.
 
