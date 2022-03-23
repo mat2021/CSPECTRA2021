@@ -46,7 +46,7 @@ En caso afirmativo, debe dar el siguiente mensaje de respuesta en la consola de 
 El *script* lo puede encontrar en la carpeta llamada **2. Script_reaper**. Para cargar este *script*, se va al menú de **Reaper** con la ruta: *Actions>Load ReaScript* y se selecciona el *csp_render.py*. Como se ve en la figura 1
 
 **Figura 1**
-
+![](https://ottocastro.com/images/README/01.jpg)
 
 
 
@@ -54,7 +54,9 @@ El *script* lo puede encontrar en la carpeta llamada **2. Script_reaper**. Para 
 
 
 Crédito
-Herramienta creada bajo la supervisión e instrucción del *Dr. Hugo Solís*, como co-tutor del Doctorando Otto Castro Solano, para la investigación: **"Estrategias de composición a través de la similitud tímbrica mediante la sinergia entre compositor y máquina"**.
+Herramienta creada bajo la supervisión e instrucción del *Dr. Hugo Solís*, como co-tutor del Doctorando Otto Castro Solano, para la investigación: **"Estrategias de composición a través de la similitud tímbrica mediante la sinergia entre compositor y máquina"**. Esta investigación tuvo como tutor principal al
+Dr. Jorge Rodrigo Sigal Sefchovich y como miembros del comité tutor a: Dra. Rossana Lara y al Dr. Hugo Solís.
+
 
 
  - [ ] Más información en:
