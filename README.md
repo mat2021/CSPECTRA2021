@@ -11,23 +11,23 @@ Esta herramienta está construida a través del entorno de *Node.js* utilizando 
 
 **Tareas de la herramienta**
 
-- **Segmenta** 
+- **Segmenta**:
 Los sonidos que entran al sistema
-- **Analiza** 
+- **Analiza**:
 A través de un conjunto de descriptores acústicos espectrales 
-- **Agrega** 
+- **Agrega**: 
 Los sonidos por su similaridad espectral
-- **Concatena** 
+- **Concatena**: 
 Crea una textura sonora con los sonidos similares que devuelve al multipistas de Reaper. 
 
-Instalación
-Esta sección explica como poner instalar el servidor de forma local, es decir en su computadora personal. Debe instalar [Node.js](https://nodejs.org/) 12 o superior, [git] (https://git-scm.com/downloads) 3.35 o superior y [Python] (https://www.python.org/downloads/) 3.10 o superior
+**Instalación**
+Esta sección explica como poner instalar el servidor de forma local, es decir en su computadora personal. Debe instalar [Node.js](https://nodejs.org/) 12 o superior, [git](https://git-scm.com/downloads) 3.35 o superior y [Python] (https://www.python.org/downloads/) 3.10 o superior
 
-1. Primero clone el proyecto de [CSpectra2021] (https://github.com/mat2021/CSPECTRA2021)
+**1.** Primero clone el proyecto de [CSpectra2021](https://github.com/mat2021/CSPECTRA2021)
 
 Es importante aclarar que, una vez que el usuario clone la versión del GitHub para instalarla en su computadora personal, debe crear la ruta: “/resources/static/assets/uploads/”. Esta le servirá al sistema para guardar los audios y diferentes archivos que genere.
 
-2. Abra la terminal y desde allí escriba la siguiente instrucción:
+**2.** Abra la terminal y desde allí escriba la siguiente instrucción:
 
 $node index.js
 
@@ -36,14 +36,11 @@ En caso afirmativo, debe dar el siguiente mensaje de respuesta en la consola de 
 Base de datos creada OK
 Running at localhost:3000
 
-2. Una vez que se instaló el servidor y este corre en la computadora. Abra el programa REAPER y cargue el *script*  **csp_render.py** que le permitirá comunicarse entre el Reaper con el servidor.
+**3.** Una vez que se instaló el servidor y este corre en la computadora. Abra el programa REAPER y cargue el *script*  **csp_render.py** que le permitirá comunicarse entre el Reaper con el servidor.
 
-El *script* lo puede encontrar en la carpeta llamada **2. Script_reaper**. Para cargar este *script*, se va al menú de **Reaper** con la ruta: *Actions>Load ReaScript* y se selecciona el *csp_render.py*.
+El *script* lo puede encontrar en la carpeta llamada **2. Script_reaper**. Para cargar este *script*, se va al menú de **Reaper** con la ruta: *Actions>Load ReaScript* y se selecciona el *csp_render.py*. Como se ve en la figura 1
 
-
-
-
-
+**Figura 1**
 
 
 
@@ -56,3 +53,6 @@ El *script* lo puede encontrar en la carpeta llamada **2. Script_reaper**. Para 
 
 
 [Reaper_scripts](https://www.reaper.fm/sdk/reascript/reascripthelp.html)
+
+
+![IMAGEN](https://photos.google.com/photo/AF1QipOXXzUker5NI3HwYpy_3NYOgZ7Grg9f1eztohwf)
