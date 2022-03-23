@@ -3,7 +3,9 @@
 [Herramienta de comparación de similitudes espectrales]
 ***
 
-![]("https://ottocastro.com/images/README/01.jpg" width = "300" height = "300")
+![](https://ottocastro.com/images/README/01.jpg =250x)
+
+Fuente: https://www.iteramos.com/pregunta/89805/cambiar-el-tamano-de-la-imagen-en-markdown-en-gitlab)
 
 **Descripción**
 Esta investigación propone el uso del **CSpectra2021** como herramienta tecnológica de asistencia a la composición musical, con el fin de confrontar y complementar la escucha del compositor mediante la escucha de máquina. En esta tarea se implementa el aprendizaje supervisado, desde un sistema informático, con el propósito de encontrar similitudes tímbricas entre grabaciones de sonidos urbanos. Posteriormente, dichos sonidos serán organizados desde la escucha del compositor de manera estratégica para la composición musical.
