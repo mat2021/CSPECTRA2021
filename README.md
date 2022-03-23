@@ -50,14 +50,14 @@ El *script* lo puede encontrar en la carpeta llamada **2. Script_reaper**. Para 
 
 
 
+
+
+
+Crédito
+Herramienta creada bajo la supervisión e instrucción del *Dr. Hugo Solís*, como co-tutor del Doctorando Otto Castro Solano, para la investigación: **"Estrategias de composición a través de la similitud tímbrica mediante la sinergia entre compositor y máquina"**.
+
+
  - [ ] Más información en:
  [https://ottocastro.com/doctorado/](https://ottocastro.com/doctorado/)
 
 *@Doctorado en Música con énfasis en Tecnología Musical, UNAM. México. Mayo, 2021. Otto Castro Solano. Agradecimiento a la beca de estudios otorgada por la Universidad de Costa Rica.*
-
-
-
-[Reaper_scripts](https://www.reaper.fm/sdk/reascript/reascripthelp.html)
-
-
-![IMAGEN](https://photos.google.com/photo/AF1QipOXXzUker5NI3HwYpy_3NYOgZ7Grg9f1eztohwf)
