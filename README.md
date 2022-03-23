@@ -21,7 +21,7 @@ Los sonidos por su similaridad espectral
 Crea una textura sonora con los sonidos similares que devuelve al multipistas de Reaper. 
 
 **Instalación**
-Esta sección explica como poner instalar el servidor de forma local, es decir en su computadora personal. Debe instalar [Node.js](https://nodejs.org/) 12 o superior, [git](https://git-scm.com/downloads) 3.35 o superior y [Python] (https://www.python.org/downloads/) 3.10 o superior
+Esta sección explica como poner instalar el servidor de forma local, es decir en su computadora personal. Debe instalar [Node.js](https://nodejs.org/) 12 o superior, [git](https://git-scm.com/downloads) 3.35 o superior y [Python](https://www.python.org/downloads/) 3.10 o superior
 
 **1.** Primero clone el proyecto de [CSpectra2021](https://github.com/mat2021/CSPECTRA2021)
 
