@@ -4,6 +4,7 @@
 *[Herramienta de comparación de similitudes espectrales]*
 ***
 
+![](https://ottocastro.com/doctorado/images/cspectra.jpg)
 
 **Descripción**
 Esta investigación propone el uso del **CSpectra2021** como herramienta tecnológica de asistencia a la composición musical, con el fin de confrontar y complementar la escucha del compositor mediante la escucha de máquina. En esta tarea se implementa el aprendizaje supervisado, desde un sistema informático, con el propósito de encontrar similitudes tímbricas entre grabaciones de sonidos urbanos. Posteriormente, dichos sonidos serán organizados desde la escucha del compositor de manera estratégica para la composición musical.
@@ -84,7 +85,7 @@ RUTA ???
 ![](https://ottocastro.com/images/README/06.jpg)
 
 Crédito
-Herramienta creada bajo la supervisión e instrucción del *Dr. Hugo Solís*, como co-tutor del Doctorando Otto Castro Solano, para la investigación: **"Estrategias de composición a través de la similitud tímbrica mediante la sinergia entre compositor y máquina"**. Esta investigación tuvo como tutor principal al
+Herramienta creada bajo la supervisión e instrucción del **Dr. Hugo Solís**, como co-tutor del Doctorando Otto Castro Solano, para la investigación: **"Estrategias de composición a través de la similitud tímbrica mediante la sinergia entre compositor y máquina"**. Esta investigación tuvo como tutor principal al
 **Dr. Jorge Rodrigo Sigal Sefchovich** y como miembros del comité tutor a: **Dra. Rossana Lara** y al **Dr. Hugo Solís**.
 
 
