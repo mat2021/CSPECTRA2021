@@ -99,6 +99,6 @@ RUTA ???
 Herramienta creada bajo la supervisión e instrucción del **Dr. Hugo Solís**, como co-tutor del Doctorando **Otto Castro Solano**, para la investigación: *"Estrategias de composición a través de la similitud tímbrica mediante la sinergia entre compositor y máquina"*.  Tutor principal al
 **Dr. Jorge Rodrigo Sigal Sefchovich** y como miembros del comité tutor a: **Dra. Rossana Lara** y al **Dr. Hugo Solís**.
 
-*@Doctorado en Música con énfasis en Tecnología Musical, UNAM. México. Abril, 2022. Otto Castro Solano. Agradecimiento a la beca de estudios otorgada por la Universidad de Costa Rica.*
-
 Agradecimiento a la Universidad de Costa Rica por el apoyo obtenido a través de su programa de becas para docentes. Esta ayuda me permitió llevar a cabo todo el programa de Doctorado en Tecnología en la Universidad Nacional Autónoma de México.
+
+*@Doctorado en Música con énfasis en Tecnología Musical, UNAM. México. Abril, 2022. Otto Castro Solano.*
