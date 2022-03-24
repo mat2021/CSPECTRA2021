@@ -48,8 +48,8 @@ $node index.js
 
 En caso afirmativo, debe dar el siguiente mensaje de respuesta en la consola de la terminal:
 ```sh
->Base de datos creada OK
->Running at localhost:3000
+> Base de datos creada OK
+> Running at localhost:3000
 ```
 **3.** Una vez que se instaló el servidor y este corre en la computadora. Abra el programa REAPER y cargue el *script*  **csp_render.py** que le permitirá comunicarse entre el Reaper con el servidor.
 
