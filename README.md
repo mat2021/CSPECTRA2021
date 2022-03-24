@@ -1,5 +1,5 @@
 
-#CSpectra2021
+# CSpectra2021
 
 *[Herramienta de comparación de similitudes espectrales]*
 ***
@@ -22,7 +22,7 @@ Crea una textura sonora con los sonidos similares que devuelve al multipistas de
 ***
 Esta herramienta está construida a través del entorno de *Node.js* utilizando el lenguaje *JavaScript* para el desarrollo del servidor. Se utiliza un *script* escrito en el lenguaje de programación de *Python*, el cual sirve de puente de comunicación con el servidor. 
 
-#Instalación
+# INSTALACIÓN
 Esta sección explica como poder instalar el servidor de forma local, es decir en su computadora personal. Se debe instalar:
 
 - [Node.js](https://nodejs.org/) 12 o superior
