@@ -92,8 +92,12 @@ RUTA ???
 
 ![](https://ottocastro.com/images/README/06.jpg)
 
+***
+
  - [ ] Más información en:
  [https://ottocastro.com/doctorado/](https://ottocastro.com/doctorado/)
+
+***
 
 ## Créditos
 Herramienta creada bajo la supervisión e instrucción del **Dr. Hugo Solís**, como co-tutor del Doctorando **Otto Castro Solano**, para la investigación: *"Estrategias de composición a través de la similitud tímbrica mediante la sinergia entre compositor y máquina"*.  Tutor principal al
