@@ -65,7 +65,7 @@ El *script* lo puede encontrar en la carpeta llamada **2. Script_reaper**. Para 
 
 ## Figura 1
 
-RUTA ???
+![](https://ottocastro.com/images/README/07.jpg)
 
 **5.** Se selecciona un fragmento del audio que se desea tomar como sonido de referencia. Este segmento no puede ser mayor a 5 segundos.
 
