@@ -40,7 +40,15 @@ Es importante aclarar que, una vez que el usuario clone la versión del GitHub p
 
 Esta le servirá al sistema para guardar los audios y diferentes archivos que genere.
 
-**2.** Abra la terminal y desde allí escriba la siguiente instrucción:
+**2.** Una vez bajado al escritorio debe instalar todas las dependencias. Para realizar esto escriba en el directorio del proyecto:
+
+```sh
+npm install
+```
+
+De esta forma se instalarán todas las dependencias de forma automáticas necesarias para correr el sistema.
+
+**3.** Abra la terminal y desde allí escriba la siguiente instrucción:
 
 ```sh
 $node index.js
@@ -51,7 +59,7 @@ En caso afirmativo, debe dar el siguiente mensaje de respuesta en la consola de 
 > Base de datos creada OK
 > Running at localhost:3000
 ```
-**3.** Una vez que se instaló el servidor y este corre en la computadora. Abra el programa REAPER y cargue el *script*  **csp_render.py** que le permitirá comunicarse entre el Reaper con el servidor.
+**4.** Una vez que se instaló el servidor y este corre en la computadora. Abra el programa REAPER y cargue el *script*  **csp_render.py** que le permitirá comunicarse entre el Reaper con el servidor.
 
 El *script* lo puede encontrar en la carpeta llamada **2. Script_reaper**. Para cargar este *script*, se va al menú de **Reaper** con la ruta: *Actions>Load ReaScript* y se selecciona el *csp_render.py*. Como se ve en la figura 1
 
@@ -59,26 +67,26 @@ El *script* lo puede encontrar en la carpeta llamada **2. Script_reaper**. Para 
 
 RUTA ???
 
-**4.** Se selecciona un fragmento del audio que se desea tomar como sonido de referencia. Este segmento no puede ser mayor a 5 segundos.
+**5.** Se selecciona un fragmento del audio que se desea tomar como sonido de referencia. Este segmento no puede ser mayor a 5 segundos.
 
 ## Figura 2
 
 ![](https://ottocastro.com/images/README/02.jpg)
 
 
-**5.**  Se selecciona el script csp_reaper.py y se ejecuta con el botón Run. Es importante anotar que el programa Reaper tiene atajos o shortcuts para automatizar la ejecución de scripts. Lo anterior puede tomarse en cuenta si se quiere que el proceso sea más rápido. 
+**6.**  Se selecciona el script csp_reaper.py y se ejecuta con el botón Run. Es importante anotar que el programa Reaper tiene atajos o shortcuts para automatizar la ejecución de scripts. Lo anterior puede tomarse en cuenta si se quiere que el proceso sea más rápido. 
 
 ## Figura 3
 
 ![](https://ottocastro.com/images/README/03.jpg)
 
-**6.**  Al ejecutar el script, esta llama al servidor, envía el segmento de audio para su análisis acústico y se realizan los procesos de búsqueda de similitud con otros segmentos. El servidor crea la textura sonora, ya concatenada con los diferentes segmentos de audio, y la monta como respuesta a su petición en el multipista de Reaper. En la figura 26, se observa la pista original, la cual proveyó el segmento de referencia, y la pista de textura sonora, que es la devuelta por el sistema. 
+**7.**  Al ejecutar el script, esta llama al servidor, envía el segmento de audio para su análisis acústico y se realizan los procesos de búsqueda de similitud con otros segmentos. El servidor crea la textura sonora, ya concatenada con los diferentes segmentos de audio, y la monta como respuesta a su petición en el multipista de Reaper. En la figura 26, se observa la pista original, la cual proveyó el segmento de referencia, y la pista de textura sonora, que es la devuelta por el sistema. 
 
 ## Figura 4
 
 ![](https://ottocastro.com/images/README/05.jpg)
 
-**7.** Después de dejar la textura sonora en el multipista de Reaper, el usuario puede ver la consola de la terminal para informarse acerca de con qué segmentos hizo la concatenación, como se ve en la figura 27. 
+**8.** Después de dejar la textura sonora en el multipista de Reaper, el usuario puede ver la consola de la terminal para informarse acerca de con qué segmentos hizo la concatenación, como se ve en la figura 27. 
 
 ## Figura 5
 
