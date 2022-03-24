@@ -86,7 +86,7 @@ RUTA ???
 
 ![](https://ottocastro.com/images/README/05.jpg)
 
-**8.** Después de dejar la textura sonora en el multipista de Reaper, el usuario puede ver la consola de la terminal para informarse acerca de con qué segmentos hizo la concatenación, como se ve en la figura 27. 
+**8.** Después de dejar la textura sonora en el multipista de Reaper, el usuario puede ver la consola de la terminal para informarse acerca de con qué segmentos hizo la concatenación, como se ve en la figura 5. 
 
 ## Figura 5
 
