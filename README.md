@@ -80,7 +80,7 @@ RUTA ???
 
 ![](https://ottocastro.com/images/README/03.jpg)
 
-**7.**  Al ejecutar el script, esta llama al servidor, envía el segmento de audio para su análisis acústico y se realizan los procesos de búsqueda de similitud con otros segmentos. El servidor crea la textura sonora, ya concatenada con los diferentes segmentos de audio, y la monta como respuesta a su petición en el multipista de Reaper. En la figura 26, se observa la pista original, la cual proveyó el segmento de referencia, y la pista de textura sonora, que es la devuelta por el sistema. 
+**7.**  Al ejecutar el script, esta llama al servidor, envía el segmento de audio para su análisis acústico y se realizan los procesos de búsqueda de similitud con otros segmentos. El servidor crea la textura sonora, ya concatenada con los diferentes segmentos de audio, y la monta como respuesta a su petición en el multipista de Reaper. En la figura 4, se observa la pista original, la cual proveyó el segmento de referencia, y la pista de textura sonora, que es la devuelta por el sistema. 
 
 ## Figura 4
 
